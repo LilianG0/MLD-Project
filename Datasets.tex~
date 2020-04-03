@@ -1,5 +1,104 @@
-\chapter{Description of the datasets: ARMOR--3D and ISAS-15}
+\documentclass{article}
 
-\section{ARMOR-3D}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usepackage{multirow}
 
-\section{ISAS}
+
+\title{MLD-Project}
+%\author{Lilian G }
+\date{March 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Description of datasets}
+In this section we can find a general description .....\\
+
+
+    \subsection{ARMOR 3D}
+    ARMOR-3D (\texttt{armor}, from now) contains 3D time series of temperature $T$, salinity $S$, geopotential height $H$ and geostrophic velocities $u_g$ and $v_g$; obtained by a statistical treatment of satellital and \emph{in-situ} data. It has a resolution of 1/4 grad over a regular grid and 33 vertical leves from 0 to 5000 m. It also contains a 2D data series of the mixed layer depth (MLD), calculated from a density threshold equivalent to a 0.2 degreeCelsius decrease.\\
+    
+    
+    \subsection{ISAS}
+    ISAS stands for In Situ Analysis System containing monthly grided fields of temperature and salinity syntetized from the ARGO datasets profiles of the same variables. This fields are projected on a horizontal grid of 1/2 degree; and a vertical resolution that consists in 152 levels from 0 to 2000m, whose discretization varies depending on the depth. The version used in this work is the ISAS15, from the years 2002-2016. In the case of the MLD, it is calculated using a criteria of 0.03
+
+
+
+ \begin{figure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{ARMOR-3D.png}
+      \caption{MLD from \texttt{armor3d}, using density criteria equivalent to a change in density of 0.2degrees.}
+      \label{subfig:Reg-ARMOR}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{ISAS-0015.png}
+      \caption{MLD using density criteria equivalent to a change in density of 0.015}
+      \label{subfig:Reg-ISAS15}
+    \end{subfigure}
+    
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{ISAS-003.png}
+      \caption{MLD using density criteria equivalent to a change in density of 0.030.}
+      \label{subfig:Reg-ISAS30}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{ISAS-0046.png}
+      \caption{MLD using density criteria equivalent to a change in density of 0.046.}
+      \label{subfig:Reg-ISAS46}
+    \end{subfigure}
+   \caption{Comparison of the MLD from \texttt{armor} and ISAS. The three different plots for ISAS considers different criteria for the estimation of the MLD. }
+    \label{fig:P10}
+    \end{figure}
+
+
+ \begin{figure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{Gulf Stream.png}
+      \caption{MLD from \texttt{armor3d}, using density criteria equivalent to a change in density of 0.2degrees.}
+      \label{subfig:Reg-ARMOR}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{Irminger Sea.png}
+      \caption{MLD using density criteria equivalent to a change in density of 0.015}
+      \label{subfig:Reg-ISAS15}
+    \end{subfigure}
+ 
+ 
+    
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{Labrador Sea.png}
+      \caption{MLD using density criteria equivalent to a change in density of 0.030.}
+      \label{subfig:Reg-ISAS30}
+    \end{subfigure}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=.9\textwidth]{North East Sea.png}
+      \caption{MLD using density criteria equivalent to a change in density of 0.046.}
+      \label{subfig:Reg-ISAS46}
+    \end{subfigure}
+   \caption{Comparison of the MLD from \texttt{armor} and ISAS. The three different plots for ISAS considers different criteria for the estimation of the MLD. }
+    \label{fig:P10}
+    \end{figure}
+
+
+
+
+
+
+
+\end{document}
+
