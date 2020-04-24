@@ -353,7 +353,7 @@ def MLD_den(depth, density, delta):
 ###########         MAIN PROGRAM
 ###############################################################################
 
-dir_1 = '/home/liliang/Documents/MLD-project/'
+dir_1 = '/home/liliang/Documents/data_ARMOR/'
 fl_n1 = 'ARMOR_2005.nc'
 
 c_armor = xr.open_dataset(dir_1 + fl_n1)
