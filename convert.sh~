@@ -1,13 +1,14 @@
 #!/bin/sh
 ### /data0/data/REFERENCE_DATA/OCEAN_REP/ARMOR3D/data/2009
 
+
 ###  dataset-armor-3d-rep-weekly_20100310T1200Z_P20190301T0000Z.nc
+###  ARMOR3D_REPv4_20050105_MLD_OptimalDeBoyer_cmemsformat
 
 
-dir_i=/data0/data/REFERENCE_DATA/OCEAN_REP/ARMOR3D/data
-file=dataset-armor-3d-rep-weekly_
-year=2010
-dir_o=/home/lgarcia/Documents/data_ARMOR
+dir_i=/home/lgarcia/Documents/Original
+file=ARMOR3D_REPv4
+dir_o=/home/lgarcia/Documents/New_ARMOR
 
 
 
@@ -17,17 +18,18 @@ dir_o=/home/lgarcia/Documents/data_ARMOR
 #echo $month
 #done
 
-for year in in {2010..2018; do
-    mkdir $dir_o/tmp
+for year in {2005..2006}; do
 
-    for f in *.nc; do
-    ncks -O -h --mk_rec_dmn time $dir_i/$year/$f $dir_o/tmp/$f-2.nc
-    done 
+#    for f in $dir_i/$ff*.nc; do
+    echo $f
+    ncks -O -h --mk_rec_dmn time $dir_i/$file_$year* $dir_o/f-$year.nc
+#    done 
 
-    ncrcat -h $dir_o/tmp/$f-2.nc $dir_o/tmp/tmp_year.nc
+#    ncrcat -h $dir_o/tmp/$f-2.nc $dir_o/tmp/tmp_$year.nc
 
-    cdo sellonlatbox,-180,180,-90,90 $dir_o/tmp/tmp_year.nc $dir_o/ARGO_$year.nc
-    ncks -d latitude,10.,85. -d longitude,-90.,50. $dir_o/ARGO_$year.nc $dir_o/ARGO_$year.nc
+#    cdo sellonlatbox,-180,180,-90,90 $dir_o/tmp/tmp_$year.nc $dir_o/ARGON_$year.nc
+#    ncks -d latitude,10.,85. -d longitude,-90.,50. $dir_o/ARGON_$year.nc $dir_o/ARGON_$year.nc
 
-    rm -rI $dir_o/tmp
+#    rm -f $dir_o/tmp
+#    echo $year
 done
